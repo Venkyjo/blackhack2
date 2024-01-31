@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotel Booking</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Hotel Booking</title>
+  <style>
     .Change-Web-Element-Example {
       display: none;
     }
@@ -137,68 +138,73 @@
         transform: translateY(-10px);
       }
     }
-</style>
+  </style>
 </head>
 <body>
-<header>
-<h1 style="color: rgb(7, 152, 248); text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);">Hotel Booking</h1>
-</header>
- 
+  <header>
+    <h1 style="color: rgb(7, 152, 248); text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);">Hotel Booking</h1>
+  </header>
+
   <div class="login-container">
-<form id="hotelLoginForm">
-<label for="name">Name:</label>
-<input type="text" id="name" name="name" required>
- 
+    <form id="hotelLoginForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
       <label for="email">E-mail:</label>
-<input type="email" id="email" name="email" required>
-<div class="required-info">
-<span class="info-icon">ℹ️</span>
+      <input type="email" id="email" name="email" required>
+      <div class="required-info">
+        <span class="info-icon">ℹ️</span>
         This field is required.
-</div>
- 
+      </div>
+
       <label for="roomType">Room Type:</label>
-<select id="roomType" name="roomType" required>
-<option value="single">Single</option>
-<option value="double">Double</option>
-<option value="suite">Suite</option>
-</select>
- 
+      <select id="roomType" name="roomType" required>
+        <option value="single">Single</option>
+        <option value="double">Double</option>
+        <option value="suite">Suite</option>
+      </select>
+
       <label for="arrivalDate">Arrival Date:</label>
-<input type="date" id="arrivalDate" name="arrivalDate" required>
- 
+      <input type="date" id="arrivalDate" name="arrivalDate" required>
+
       <label for="departureDate">Departure Date:</label>
-<input type="date" id="departureDate" name="departureDate" required>
- 
+      <input type="date" id="departureDate" name="departureDate" required>
+
       <label for="specialRequests">Special Requests:</label>
-<textarea id="specialRequests" name="specialRequests" rows="4"></textarea>
- 
+      <textarea id="specialRequests" name="specialRequests" rows="4"></textarea>
+
       <button type="submit" class="submit-button">Submit</button>
-</form>
- 
+    </form>
+
     <div id="celebrationMessage" class="celebration-message">
       Thanks for submitting! 🎉
-</div>
-</div>
- 
+    </div>
+  </div>
+
   <script>
     const form = document.getElementById('hotelLoginForm');
     const celebrationMessage = document.getElementById('celebrationMessage');
- 
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       form.classList.add('active');
       showCelebrationMessage();
     });
- 
+
     function showCelebrationMessage() {
       // Hide the form
       form.style.display = 'none';
- 
+
       // Show the celebration message
       celebrationMessage.style.display = 'block';
       celebrationMessage.classList.add('celebration-animation');
     }
-</script>
+
+    // Fetch the repository name from the URL
+    const repoName = window.location.pathname.split('/')[1];
+
+    // Set the title to "Hotel Booking" without including the repository name
+    document.title = "Hotel Booking";
+  </script>
 </body>
 </html>
-
